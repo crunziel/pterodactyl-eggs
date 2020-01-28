@@ -1,0 +1,36 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-01-29T02:26:45+11:00",
+    "name": "Nadeko - 1.9+",
+    "author": "crunziel@zielhost.id",
+    "description": "Nadeko 1.9+ by Kwoth",
+    "image": "repo.crunziel.com\/crunziel\/nadeko:1.9",
+    "startup": "${STARTUP_CMD}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\r\n# Nadeko Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\n#Install Curl\r\napk update\r\napk add curl\r\n\r\n#Change Directory\r\ncd \/mnt\/server\r\n\r\n#Download setup.sh to container\r\ncurl -LJO https:\/\/raw.githubusercontent.com\/crunziel\/pterodactyl-eggs\/master\/Discord\/NadekoBot\/setup.sh",
+            "container": "alpine:3.11",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Command",
+            "description": "The startup command for your bot to use",
+            "env_variable": "STARTUP_CMD",
+            "default_value": "bash setup.sh",
+            "user_viewable": 1,
+            "user_editable": 1,
+            "rules": "required"
+        }
+    ]
+}
