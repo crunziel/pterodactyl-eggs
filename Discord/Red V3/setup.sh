@@ -4,7 +4,7 @@
 cp /run.sh /home/container/run.sh
 
 #Activate venv
-python3.8 -m venv /home/container/redenv && source home/container/redenv/bin/activate
+python3.8 -m venv /home/container/redenv && source /home/container/redenv/bin/activate
 
 python -m pip install -U pip setuptools wheel
 python -m pip install -U Red-DiscordBot
