@@ -1,0 +1,26 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2020-02-02T03:42:31+11:00",
+    "name": "ArchiSteamFarm",
+    "author": "crunziel@zielhost.id",
+    "description": "C# application with primary purpose of idling Steam cards from multiple accounts simultaneously.",
+    "image": "repo.crunziel.com\/crunziel\/asf:latest",
+    "startup": ".\/ArchiSteamFarm",
+    "config": {
+        "files": "{\r\n    \"config\/ASF.json\": {\r\n        \"parser\": \"json\",\r\n        \"find\": {\r\n            \"AutoRestart\": true,\r\n            \"ConfirmationsLimiterDelay\": 10,\r\n            \"ConnectionTimeout\": 120,\r\n            \"CurrentCulture\": null,\r\n            \"Debug\": false,\r\n            \"FarmingDelay\": 30,\r\n            \"GiftsLimiterDelay\": 1,\r\n            \"Headless\": false,\r\n            \"IdleFarmingPeriod\": 8,\r\n            \"InventoryLimiterDelay\": 3,\r\n            \"IPC\": false,\r\n            \"IPCPassword\": null,\r\n            \"LoginLimiterDelay\": 10,\r\n            \"MaxFarmingTime\": 10,\r\n            \"MaxTradeHoldDuration\": 15,\r\n            \"OptimizationMode\": 1,\r\n            \"SteamMessagePrefix\": \"\/me \",\r\n            \"SteamProtocols\": 7,\r\n            \"UpdateChannel\": 1,\r\n            \"UpdatePeriod\": 24,\r\n            \"WebLimiterDelay\": 300,\r\n            \"WebProxy\": null,\r\n            \"WebProxyPassword\": null,\r\n            \"WebProxyUsername\": null\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \"INFO|ASF|RegisterBots() Success!\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\r\n# ASF Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\n#Install Curl\r\napk update\r\napk add curl p7zip\r\n\r\n#Change Directory\r\ncd \/mnt\/server\r\n\r\n#Download ASF and unzip there\r\ncurl -LJO https:\/\/github.com\/JustArchiNET\/ArchiSteamFarm\/releases\/latest\/download\/ASF-linux-x64.zip\r\n7z e ASF-linux-x64.zip -y\r\nrm ASF-linux-x64.zip",
+            "container": "alpine:3.11",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": []
+}
